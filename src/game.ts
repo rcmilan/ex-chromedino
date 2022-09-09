@@ -4,23 +4,17 @@ import PreloadScene from "./scenes/preload";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  parent: "game",
-//   backgroundColor: "#F0F0F0",
+  width: 1000,
+  height: 340,
   pixelArt: true,
   transparent: true,
-  scale: {
-    mode: Phaser.Scale.ScaleModes.FIT,
-    width: window.innerWidth,
-    height: window.innerHeight,
-    autoCenter: Phaser.Scale.Center.CENTER_BOTH,
-  },
   physics: {
-    default: 'arcade',
+    default: "arcade",
     arcade: {
-      debug: true
-    }
+      debug: false,
+    },
   },
   scene: [PreloadScene, PlayScene],
 };
 
-export default new Phaser.Game(config);
+new Phaser.Game(config);
