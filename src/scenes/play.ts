@@ -4,7 +4,7 @@ import {
   ASSETS_JUMP,
   ASSETS_REACH,
   ASSETS_RESTART,
-  GAME_SCENE,
+  SCENE_PLAY,
 } from "../config/constants";
 
 export default class PlayScene extends Phaser.Scene {
@@ -21,7 +21,7 @@ export default class PlayScene extends Phaser.Scene {
     | undefined;
 
   constructor() {
-    super(GAME_SCENE);
+    super(SCENE_PLAY);
   }
 
   create() {

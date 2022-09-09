@@ -20,13 +20,13 @@ import {
   ASSETS_REACH,
   ASSETS_RESTART,
   ASSETS_STAR,
-  GAME_SCENE,
-  PRELOAD_SCENE,
+  SCENE_PLAY,
+  SCENE_PRELOAD,
 } from "../config/constants";
 
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
-    super(PRELOAD_SCENE);
+    super(SCENE_PRELOAD);
   }
 
   preload() {
@@ -75,6 +75,6 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start(GAME_SCENE);
+    this.scene.start(SCENE_PLAY);
   }
 }
