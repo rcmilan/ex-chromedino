@@ -21,3 +21,7 @@ export const ASSETS_STAR = "star";
 
 export const SCENE_PLAY = "gameScene";
 export const SCENE_PRELOAD = "preloadScene";
+
+export const ANIM_DINO_RUN = "dino-run";
+export const ANIM_DINO_DOWN = "dino-down";
+export const ANIM_ENEMY_FLY = "enemy-fly";
