@@ -72,6 +72,10 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image(ASSETS_OBSTACLE_4, "assets/cactuses_big_1.png");
     this.load.image(ASSETS_OBSTACLE_5, "assets/cactuses_big_2.png");
     this.load.image(ASSETS_OBSTACLE_6, "assets/cactuses_big_3.png");
+
+    // this.load.audio(ASSETS_JUMP, "assets/assets_jump.m4a");
+    // this.load.audio(ASSETS_HIT, "assets/assets_hit.m4a");
+    // this.load.audio(ASSETS_REACH, "assets/assets_reach.m4a");
   }
 
   create() {

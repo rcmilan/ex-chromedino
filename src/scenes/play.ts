@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import {
+  ASSETS_GROUND,
   ASSETS_HIT,
   ASSETS_JUMP,
   ASSETS_REACH,
@@ -19,6 +20,7 @@ export default class PlayScene extends Phaser.Scene {
   private startTrigger:
     | Phaser.Types.Physics.Arcade.SpriteWithDynamicBody
     | undefined;
+  private ground!: Phaser.GameObjects.TileSprite;
 
   constructor() {
     super(SCENE_PLAY);
@@ -32,13 +34,12 @@ export default class PlayScene extends Phaser.Scene {
     this.respawnTime = 0;
     this.score = 0;
 
-    this.jumpSound = this.sound.add(ASSETS_JUMP, { volume: 0.2 });
-    this.hitSound = this.sound.add(ASSETS_HIT, { volume: 0.2 });
-    this.reachSound = this.sound.add(ASSETS_REACH, { volume: 0.2 });
+    this.ground = this.add
+      .tileSprite(0, Number(height), Number(width), 26, ASSETS_GROUND)
+      .setOrigin(0, 1);
+  }
 
-    this.startTrigger = this.physics.add
-      .sprite(0, 10, ASSETS_RESTART)
-      .setOrigin(0, 1)
-      .setImmovable();
+  update(time: number, delta: number): void {
+    this.ground.tilePositionX += 5;
   }
 }
