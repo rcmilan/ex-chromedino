@@ -25,7 +25,6 @@ export default class PlayScene extends Phaser.Scene {
     this.player.create();
 
     this.initAnimations();
-    this.handleInputs();
   }
 
   initAnimations() {
@@ -40,11 +39,9 @@ export default class PlayScene extends Phaser.Scene {
     });
   }
 
-  handleInputs() {}
-
   update(time: number, delta: number): void {
     this.ground.tilePositionX += this.gameSpeed;
-
+    
     this.player.update(time, delta);
   }
 }

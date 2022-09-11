@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import * as constants from "../config/constants";
+import * as spriteParams from "../config/spriteParams";
 
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
@@ -29,19 +30,23 @@ export default class PreloadScene extends Phaser.Scene {
     });
 
     this.load.spritesheet(constants.ASSETS_DINO, "assets/dino-run.png", {
-      frameWidth: 88,
-      frameHeight: 94,
+      frameWidth: spriteParams.DINO_WIDTH,
+      frameHeight: spriteParams.DINO_HEIGHT,
     });
 
     this.load.spritesheet(constants.ASSETS_DINO_DOWN, "assets/dino-down.png", {
-      frameWidth: 118,
-      frameHeight: 94,
+      frameWidth: spriteParams.DINO_DOWN_WIDTH,
+      frameHeight: spriteParams.DINO_DOWN_HEIGHT,
     });
 
-    this.load.spritesheet(constants.ASSETS_ENEMY_BIRD, "assets/enemy-bird.png", {
-      frameWidth: 92,
-      frameHeight: 77,
-    });
+    this.load.spritesheet(
+      constants.ASSETS_ENEMY_BIRD,
+      "assets/enemy-bird.png",
+      {
+        frameWidth: 92,
+        frameHeight: 77,
+      }
+    );
 
     this.load.image(constants.ASSETS_OBSTACLE_1, "assets/cactuses_small_1.png");
     this.load.image(constants.ASSETS_OBSTACLE_2, "assets/cactuses_small_2.png");
