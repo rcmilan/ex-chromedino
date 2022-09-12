@@ -8,15 +8,14 @@ export default class PlayerComponent extends BaseComponent {
   create(): void {
     const { height } = this.scene.game.config;
 
-    const initialX = 32;
-    const initialY = Number(height);
+    const dinoInitialX = 32;
+    const dinoInitialY = Number(height);
 
     this.dino = this.scene.physics.add
-      .sprite(initialX, initialY, constants.ASSETS_DINO_IDLE)
+      .sprite(dinoInitialX, dinoInitialY, constants.ASSETS_DINO, 0)
       .setOrigin(0, 1)
       .setCollideWorldBounds(true)
-      .setGravityY(5000)
-      .setBodySize(spriteParams.DINO_WIDTH, spriteParams.DINO_HEIGHT);
+      .setGravityY(5000);
 
     this.handleInputs();
     this.initAnimations();
@@ -28,8 +27,7 @@ export default class PlayerComponent extends BaseComponent {
       this.dino.anims.stop();
       this.dino.setTexture(constants.ASSETS_DINO);
     } else {
-      
-      if (this.dino.body.height < spriteParams.DINO_HEIGHT) {
+      if (this.dino.body.height < spriteParams.DINO_RUN_HEIGHT) {
         this.dino.play(constants.ANIM_DINO_DOWN, true);
       } else {
         this.dino.play(constants.ANIM_DINO_RUN, true);
@@ -81,7 +79,6 @@ export default class PlayerComponent extends BaseComponent {
 
       this.dino.body.offset.y = 36;
       this.dino.body.offset.x = 0;
-
     });
 
     this.scene.input.keyboard.on("keyup-DOWN", () => {
@@ -92,7 +89,10 @@ export default class PlayerComponent extends BaseComponent {
   }
 
   private restoreSize() {
-    this.dino.body.setSize(spriteParams.DINO_WIDTH, spriteParams.DINO_HEIGHT);
+    this.dino.body.setSize(
+      spriteParams.DINO_RUN_WIDTH,
+      spriteParams.DINO_RUN_HEIGHT
+    );
     this.dino.body.offset.y = 0;
     this.dino.body.offset.x = 0;
   }

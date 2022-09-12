@@ -30,8 +30,8 @@ export default class PreloadScene extends Phaser.Scene {
     });
 
     this.load.spritesheet(constants.ASSETS_DINO, "assets/dino-run.png", {
-      frameWidth: spriteParams.DINO_WIDTH,
-      frameHeight: spriteParams.DINO_HEIGHT,
+      frameWidth: spriteParams.DINO_RUN_WIDTH,
+      frameHeight: spriteParams.DINO_RUN_HEIGHT,
     });
 
     this.load.spritesheet(constants.ASSETS_DINO_DOWN, "assets/dino-down.png", {
